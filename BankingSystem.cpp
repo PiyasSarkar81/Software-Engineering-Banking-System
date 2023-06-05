@@ -134,19 +134,8 @@ int main(){
         }
         case 6:
         {
-            ofstream f;
-            f.open("AccountBalances.csv");
-            for(auto account: balances){
-                f<<account.first<<","<<account.second<<endl;
-            }
-            f.close();
-
-            f.open("AccountDetails.csv");
-            for(auto account: details){
-                f<<account.first<<","<<account.second<<endl;
-            }
-            f.close();
-            return 0;
+            cout<<"Thank you for using our banking system"<<endl;
+            break;
         }
         default:
             cout<<"Invalid choice"<<endl;
@@ -154,6 +143,18 @@ int main(){
         }
 
         printf("\n");  
+        ofstream f;
+        f.open("AccountBalances.csv");
+        for(auto account: balances){
+            f<<account.first<<","<<account.second<<endl;
+        }
+        f.close();
+
+        f.open("AccountDetails.csv");
+        for(auto account: details){
+            f<<account.first<<","<<account.second<<endl;
+        }
+            f.close();
         // git add .
         // git commit -m "commited at time"
 
