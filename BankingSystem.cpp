@@ -159,7 +159,10 @@ int main(){
 
 
         system("git add .");
-        system("git commit -m \"commited at time\"");
+        time_t now = time(NULL);
+        string time = ctime(&now);
+        string commitMessage = "commited at " + time;
+        system(("git commit -m \"" + commitMessage + "\"").c_str());
     }
     return 0;
 }
