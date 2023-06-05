@@ -135,7 +135,29 @@ int main(){
         case 6:
         {
             cout<<"Thank you for using our banking system"<<endl;
-            break;
+            printf("\n");  
+        ofstream f;
+        f.open("AccountBalances.csv");
+        for(auto account: balances){
+            f<<account.first<<","<<account.second<<endl;
+        }
+        f.close();
+
+        f.open("AccountDetails.csv");
+        for(auto account: details){
+            f<<account.first<<","<<account.second<<endl;
+        }
+            f.close();
+        // git add .
+        // git commit -m "commited at time"
+
+
+            system("git add .");
+            time_t now = time(NULL);
+            string time = ctime(&now);
+            string commitMessage = "commited at " + time;
+            system(("git commit -m \"" + commitMessage + "\"").c_str());
+            exit(0);
         }
         default:
             cout<<"Invalid choice"<<endl;
